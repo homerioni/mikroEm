@@ -13,9 +13,7 @@
     z-index: 2;
 
     @media (max-width: 1024px) {
-      width: calc(100% + 3.2rem);
-      padding: 0 1.6rem;
-      margin-left: -1.6rem;
+      width: 100%;
       overflow-x: scroll !important;
 
       &::-webkit-scrollbar {
@@ -129,6 +127,14 @@
     }
 
     &-text {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+
+      @media (max-width: 1024px) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+      }
+
       & p:not(:last-child) {
         margin-bottom: 0.9rem;
       }

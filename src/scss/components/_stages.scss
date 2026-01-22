@@ -59,7 +59,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 2.1rem;
+    gap: 2rem;
 
     &_img {
       position: relative;
@@ -102,6 +102,14 @@
 
       @media (max-width: 1024px) {
         width: 95%;
+      }
+
+      & .text {
+        line-height: 2.8rem;
+
+        @media (max-width: 1024px) {
+          line-height: 2rem;
+        }
       }
     }
   }
@@ -161,6 +169,13 @@
 
         @media (max-width: 768px) {
           height: 5.7rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .text {
+          font-size: 1.4rem;
+          line-height: 1.8rem;
         }
       }
     }
