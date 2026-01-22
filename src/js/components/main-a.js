@@ -121,12 +121,14 @@ const form = () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        if (name.value == "" && phone.value == "" || phone.value == "" || name.value == "") {
+        console.log(phone.value.length)
+
+        if (name.value == "" && phone.value == "" || phone.value == "" || name.value == "" || phone.value.length < 16) {
             if (name.value == "") {
                 name.classList.add("invalid");
                 nameError.className = "error active";
             }
-            if (phone.value == "") {
+            if (phone.value == "" || phone.value.length < 16) {
                 phone.classList.add("invalid");
                 phoneError.className = "error active";
             }

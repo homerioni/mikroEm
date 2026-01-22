@@ -38,6 +38,7 @@
     padding: 1.6rem 2rem 4rem 1.6rem;
 
     @media (max-width: 768px) {
+      flex: none;
       padding: 1.6rem 1.2rem 2.8rem 1.6rem;
       width: auto;
       min-width: auto;
