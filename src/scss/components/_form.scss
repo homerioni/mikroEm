@@ -58,7 +58,7 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.8rem;
     margin-top: 4rem;
 
     @media (max-width: 768px) {
@@ -86,7 +86,6 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 2rem;
 
     @media (max-width: 768px) {
       flex-direction: column-reverse;

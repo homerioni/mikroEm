@@ -253,6 +253,8 @@ const slider1 = new Swiper('.products__slider', {
 //   });
 // }
 
+import image from '../../assets/images/icons/location.svg';
+
 function init() {
   let map = new ymaps.Map("map", {
       center: [55.969346, 37.193950],
@@ -261,7 +263,7 @@ function init() {
   });
   let placemark = new ymaps.Placemark([55.977163, 37.249128], {}, {
           iconLayout: 'default#image',
-          iconImageHref: './assets/images/icons/location.svg',
+          iconImageHref: image,
           iconImageSize: [84, 84],
           iconImageOffset: [-45, -65],
       })
@@ -370,6 +372,11 @@ document.querySelector('input[type="file"]').addEventListener('change', function
 
     document.querySelector('.load-file__label').innerHTML = innerBtn;
   }
+
+    document.querySelector('.load-file__uploaded .close').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.load-file__label').innerHTML = "Прикрепить файл";
+    })
 });
 
 if ($(window).width() < 769) {
