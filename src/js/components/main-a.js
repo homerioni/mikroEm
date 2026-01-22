@@ -154,8 +154,72 @@ const tel = document.querySelector('.form__input--tel')
     });
 }
 
+const formCalc = () => {
+    const form = document.querySelector('.form-calc__form');
+    const name = document.querySelector('.form-calc__name');
+    const phone = document.querySelector('.form-calc__phone');
+    const nameError = document.querySelector(".form-calc__name + div.error");
+    const phoneError = document.querySelector(".form-calc__phone + div.error");
+
+    name.addEventListener("input", function (event) {
+        if (name.validity.valid) {
+            nameError.className = "error";
+            name.classList.remove("invalid");
+        } else {
+            if (name.validity.valueMissing) {
+                nameError.className = "error active";
+                name.classList.add("invalid");
+            }
+            nameError.className = "error active";
+            name.classList.add("invalid");
+        }
+    });
+
+    phone.addEventListener("input", function (event) {
+        if (phone.validity.valid) {
+            phoneError.className = "error";
+            phone.classList.remove("invalid");
+        } else {
+            if (phone.validity.valueMissing) {
+                phoneError.className = "error active";
+                phone.classList.add("invalid");
+            }
+            phoneError.className = "error active";
+            phone.classList.add("invalid");
+        }
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (name.value == "" && phone.value == "" || phone.value == "" || name.value == "" || phone.value.length < 16) {
+            if (name.value == "") {
+                name.classList.add("invalid");
+                nameError.className = "error active";
+            }
+            if (phone.value == "" || phone.value.length < 16) {
+                phone.classList.add("invalid");
+                phoneError.className = "error active";
+            }
+            return;
+        } else {
+            $.ajax();
+            name.value = "";
+            phone.value = "";
+        }
+
+    });
+
+    const tel = document.querySelector('.form-calc__phone')
+
+    IMask(tel, {
+        mask: '+{7}(000)000-00-00',
+    });
+}
+
 $(function () {
-  form()
+  form();
+    formCalc();
 })
 
 const slider1 = new Swiper('.products__slider', {

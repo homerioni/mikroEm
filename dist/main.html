@@ -535,14 +535,24 @@
             </p>
             <form class="form-calc__form">
               <div class="form-calc__input-group">
-                <input class="form-calc__input" type="text" placeholder="Имя*" />
-                <span class="error">Данные введены некорректно</span>
+                <input class="form-calc__input form-calc__name" type="text" placeholder="Имя*" />
+                  <div class="error">
+                      <div class="error__icon">
+                          <img src="assets/images/alert.svg" alt="" />
+                      </div>
+                      <span>Данные введены некорректно</span>
+                  </div>
               </div>
               <div class="form-calc__input-group">
-                <input class="form-calc__input" type="text" placeholder="Телефон*" />
-                <span class="error">Данные введены некорректно</span>
+                <input class="form-calc__input form-calc__phone" type="text" placeholder="Телефон*" />
+                  <div class="error">
+                      <div class="error__icon">
+                          <img src="assets/images/alert.svg" alt="" />
+                      </div>
+                      <span>Некорректный телефон</span>
+                  </div>
               </div>
-              <textarea class="form-calc__input comment" rows="2" placeholder="Комментарий"></textarea>
+              <textarea class="form-calc__input form-calc__message comment" rows="2" placeholder="Комментарий"></textarea>
               <div class="form-calc__buttons">
                 <button class="button" type="submit">Оставить заявку</button>
                 <input id="load-file" type="file" />
